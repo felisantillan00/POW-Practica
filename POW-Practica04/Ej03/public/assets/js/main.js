@@ -26,8 +26,8 @@ document.addEventListener('DOMContentLoaded', function() {
         // Recorrer las mascotas ordenadas
         mascotas.forEach(mascota => {
             const fila = `
-                <tr class="text-gray-700 dark:text-gray-400">
-                    <td class="px-4 py-3" id="id">
+                <tr class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
+                    <td class="w-16 px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider" id="id">
                         ${mascota.id || 'Sin ID'}
                     </td>
                     <td class="px-4 py-3">
