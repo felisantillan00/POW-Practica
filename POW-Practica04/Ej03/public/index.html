@@ -282,6 +282,42 @@
               </div>
             </div>
           </div>
+          <div class="flex flex-col flex-1 w-full">
+            </header>
+            <!-- Filter and Sort Controls -->
+            <div class="px-6 py-4 bg-white dark:bg-gray-800 space-x-20">
+              <div class="flex flex-wrap justify-between mb-4">
+                <!-- Filter Options -->
+                <div class="flex items-center space-x-10">
+                  <label for="filter-category" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Filtrar por:</label>
+                  <select id="filter-category" name="filter-category" class="block w-full py-2 pl-3 pr-10 text-base border-gray-300 rounded-md dark:border-gray-600 dark:bg-gray-700 dark:text-gray-300 sm:text-sm">
+                    <option value="all">Todas las categorias</option>
+                    <option value="dogs">Dogs</option>
+                    <option value="cats">Cats</option>
+                    <option value="others">Others</option>
+                  </select>
+                </div>
+                <!-- Sort Options -->
+                <div class="flex items-center space-x-10">
+                  <label for="sort-by" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Ordenar por:</label>
+                  <select id="sort-by" name="sort-by" class="block w-full py-2 pl-3 pr-10 text-base border-gray-300 rounded-md dark:border-gray-600 dark:bg-gray-700 dark:text-gray-300 sm:text-sm">
+                    <option value="name-asc">ID</option>
+                    <option value="name-asc">Name (A-Z)</option>
+                    <option value="name-desc">Name (Z-A)</option>
+                    <option value="date-asc">Date (Oldest First)</option>
+                    <option value="date-desc">Date (Newest First)</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          
+            <!-- Table (existing table should go here) -->
+            <div class="overflow-x-auto bg-white shadow-md dark:bg-gray-800">
+              <table class="min-w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                <!-- Table header and body will be here -->
+              </table>
+            </div>
+          </div>
           <!-- New Table -->
           <div class="w-full overflow-hidden rounded-lg shadow-xs">
             <div class="w-full overflow-x-auto">
