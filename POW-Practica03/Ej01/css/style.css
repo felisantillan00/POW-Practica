@@ -1,0 +1,29 @@
+body {
+    background-image: url('../resources/fondo.jpeg'); /* Ruta de la imagen de fondo */
+    background-size: cover; /* Hace que la imagen cubra todo el fondo */
+    margin: 0; /* Elimina márgenes por defecto */
+    padding: 0; /* Elimina padding por defecto */
+}
+
+.container {  
+    width: 80%;  
+    margin: 40px auto;  
+    text-align: center;  
+    padding: 20px;
+    border-radius: 10px;  
+}
+
+.pizza-image {  
+    display: block;  
+    margin: auto;  
+    width: 53%;  
+    height: auto;  
+}  
+    
+.text-container {  
+    background-color: #fff;  
+    padding: 20px;
+    margin: auto;  
+    width: 49.4%;  
+    border: 1px solid #ddd; 
+}  

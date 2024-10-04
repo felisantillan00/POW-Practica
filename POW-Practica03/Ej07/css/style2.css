@@ -1,0 +1,48 @@
+body {
+    background-color: rgb(242, 242, 27);
+    height: 100vh; /* Ocupa toda la altura de la ventana */
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    flex-direction: column; /* Alinea los elementos verticalmente */
+    align-items: center; /* Centra todos los elementos en el body */
+    margin: 0;
+}
+
+.buttonMain {
+    background-color: rgb(35, 255, 39);
+    border-radius: 50px;
+    height: 30px;
+    width: 290px;
+    margin-bottom: 20px; /* Añadir espacio entre botón y cuadro */
+}
+
+.cuadro {
+    background-color: white;
+    padding: 20px;
+    width: 250px;
+    display: flex;
+    flex-direction: column; /* Asegura que los elementos dentro estén en columna */
+    justify-content: space-between; /* Espacia los elementos dentro del cuadro */
+    align-items: center; /* Mantiene el botón centrado horizontalmente */
+    height: auto; /* Ajusta la altura según el contenido */
+    margin-bottom: 20px; /* Añade un margen inferior entre cuadros */
+}
+
+.cuadro b {
+    align-self: flex-start; /* Alinea el texto en negrita a la izquierda */
+    margin-bottom: 10px; /* Añade espacio inferior al texto en negrita */
+}
+
+.cuadro p {
+    align-self: flex-start; /* Alinea los párrafos a la izquierda */
+    margin-bottom: 10px; /* Añade espacio inferior al párrafo */
+}
+
+.btnBorrar {
+    background-color: rgb(236, 20, 153);
+    border-radius: 20px;
+    width: 100%; /* Ancho completo del cuadro */
+    height: 30px;
+    color: white;
+}
+

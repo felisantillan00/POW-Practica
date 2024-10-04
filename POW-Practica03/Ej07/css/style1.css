@@ -1,0 +1,44 @@
+body{
+    background-color: aqua;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.btnEnviar{
+    background-color: rgb(43, 215, 43);
+    border-radius: 20px;
+    width: 30%;
+    height: 35px;
+}
+
+.btnBorrar{
+    background-color: rgb(236, 20, 153);
+    border-radius: 20px;
+    width: 30%;
+    height: 35px;
+}
+
+/* Cambiar el tamaño del campo de texto */
+input[type="text"] {
+    width: 300px;  /* Cambiar ancho */
+}
+
+/* Cambiar el tamaño del botón de selección (select) */
+select {
+    width: 300px;  /* Cambiar ancho */
+}
+
+/* Cambiar el tamaño del área de texto */
+textarea {
+    width: 400px;  /* Cambiar ancho */
+}
+
+/* Cambiar el tamaño de los botones (radio y checkbox incluidos)
+input[type="radio"], input[type="checkbox"] {
+    transform: scale(1.5); /* Aumentar el tamaño del radio button y checkbox } */
+
+/* Cambiar el tamaño del botón de envío */
+input[type="submit"] {
+    width: 310px;  /* Cambiar ancho */
+}

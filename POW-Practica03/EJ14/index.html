@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 14</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center; /* Centra horizontalmente */
+            align-items: center;    /* Centra verticalmente */
+            height: 100vh;          /* Hace que el cuerpo ocupe toda la altura de la ventana */
+            margin: 0;
+        }
+        img {
+            border: 1px solid black;
+            transition: transform 0.3s;
+        }
+        img:hover {
+            transform: scale(1.1); /* Destaca la imagen */
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div>
+            <h2 style="text-align: center;">Muestra de imagenes</h2>
+        </div>
+        <div>
+            <img id="imagen" src="resources/Peron.png" alt="imagen" 
+            onmouseover="cambiarImagen('resources/CFK.png')" 
+            onmouseout="cambiarImagen('resources/Albert.png')" 
+            onclick= "redirigirConConfirmacion()">
+        </div>
+        <script>
+            function cambiarImagen(nuevaImagen){
+                document.getElementById('imagen').src = nuevaImagen;
+            }
+            function redirigirConConfirmacion() {
+                const confirmacion = confirm("Acción al hacer clic. ¿Deseas cambiar de página?");
+                if (confirmacion) {
+                    // Redirigir a la nueva página
+                    window.location.href = "https://www.infopico.com";
+                } else {
+                    alert("Has cancelado la redirección.");
+                }
+            }
+        </script>
+    </div>
+</body>
+</html>

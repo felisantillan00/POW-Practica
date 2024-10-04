@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8"> <!-- Declara que el documento está en UTF-8 (manejo de caracteres) -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Ajusta la visualización en dispositivos móviles -->
+    <title>Estructura Semántica HTML5</title> <!-- Título de la página que aparece en la pestaña del navegador -->
+    <link rel="stylesheet" href="css/main.css"> <!-- Enlace al archivo CSS externo -->
+</head>
+
+<body>
+    <div class="container text-center cabeza"> <!-- Contenedor principal que agrupa todo el contenido de la página -->
+        
+        <!-- Título -->
+        <div class="row">
+            <div class="col primera-columna" style="text-align: center;">
+                Estructura Semántica del HTML5 <!-- Texto principal que funciona como título de la página -->
+            </div>
+        </div>
+        <!-- Header -->
+        <header class="row"> <!-- Sección de la cabecera semántica -->
+            <div class="col columna" style="text-align: center;">
+                Etiqueta Header <!-- Contenido de la cabecera -->
+            </div>
+        </header>
+        <!-- Nav principal -->
+        <nav class="row"> <!-- Barra de navegación principal -->
+            <div class="col columna" style="text-align: center;">
+                Etiqueta Nav <!-- Contenido del menú de navegación -->
+            </div>
+        </nav>
+        <!-- Contenido principal con aside, section y un segundo nav -->
+        <div class="row"> <!-- Filas para agrupar aside, section y el segundo nav en una misma línea -->
+            <aside class="col columna" style="text-align: center;">
+                Etiqueta Aside <!-- Contenido lateral, normalmente usado para barras laterales o enlaces complementarios -->
+            </aside>
+            <section class="col-6 columna" style="text-align: center;">
+                Etiqueta Section <!-- Sección principal del contenido -->
+                <article class="col columna-Etiqueta-Nav" style="text-align: center;">
+                    Etiqueta Article <!-- Artículo que contiene información importante o principal dentro de la sección -->
+                </article>
+            </section>
+            <nav class="col columna" style="text-align: center;">
+                Etiqueta Nav 2 <!-- Segundo menú de navegación, puede ser un menú lateral o complementario -->
+            </nav>
+        </div>
+        <!-- Footer -->
+        <footer class="row"> <!-- Pie de página semántico -->
+            <div class="col columna" style="text-align: center;">
+                Etiqueta Footer <!-- Contenido del pie de página -->
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

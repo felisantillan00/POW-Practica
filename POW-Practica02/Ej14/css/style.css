@@ -1,0 +1,38 @@
+@font-face {
+    font-family: Montserrat;
+    src: url(../resources/Montserrat/Montserrat-VariableFont_wght.ttf);
+}
+header{
+    background: rgb(20, 20, 173);
+    width: 100%;
+    line-height: 10px;
+    padding: 1px;
+    margin-bottom: 0%;
+    color: white;
+    font-family: Montserrat, Arial, sans-serif;
+}
+
+.link{
+    text-decoration: none;
+    font-family: Montserrat;
+
+}
+
+li{
+    margin-left: 3%;
+    display: block !important;
+    margin-top: 1%;
+}
+
+
+footer{
+    background: rgb(20, 20, 173);
+    width: 100%;
+    line-height: 20px;
+    padding: 5%;
+    margin-top: 4%;
+    margin-left: 0%;
+    position: absolute;
+    bottom: 0%;
+    width: 100%;
+}

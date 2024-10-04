@@ -1,0 +1,42 @@
+table {
+    width: 100%;
+    border-collapse: collapse; /* Asegura que las celdas estén alineadas correctamente */
+}
+
+td {
+    vertical-align: top; /* Alinea el contenido de las celdas en la parte superior */
+    padding: 10px; /* Agrega un margen*/
+}
+
+.col-izquierda {
+    width: 20%;
+    padding-top: 3%;
+    padding-left: 3%;
+}
+
+.col-derecha {
+    width: 80%;
+    vertical-align: top; /* Asegura que el contenido de la columna derecha esté alineado con la izquierda */
+    padding-right: 20%;
+}
+
+/* Ajustes para eliminar márgenes no deseados */
+.col-derecha h2, .col-derecha h3, .col-derecha p {
+    margin-top: 0;
+    text-align: justify;
+}
+
+/* Ajustes para la tabla interna */
+table td .col-izquierda2, .col-media2, .col-derecha2 {
+    padding-left: 0; /* Elimina cualquier padding que desplace el contenido */
+}
+
+table td {
+    vertical-align: top;
+}
+
+/* Corrección de porcentaje */
+.col-izquierda2, .col-media2, .col-derecha2 {
+    width: 33.3%;
+    text-align: justify;
+}

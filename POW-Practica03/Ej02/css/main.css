@@ -1,0 +1,76 @@
+/* Reset de estilos para que todos los elementos tengan márgenes y rellenos uniformes */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Asegura que el padding y el border no influyan en el tamaño del elemento */
+    font-family: Arial, sans-serif; /* Aplica la fuente Arial a todo el documento */
+}
+
+/* Estilo para la cabecera */
+.cabeza {
+    background: rgb(187, 186, 186); /* Color de fondo gris claro */
+    display: flex; /* Utiliza flexbox para alinear elementos hijos */
+    justify-content: center; /* Centra horizontalmente los elementos hijos */
+    flex-direction: column; /* Coloca los elementos hijos en columna */
+    border-radius: 5px; /* Bordes redondeados */
+    margin-top: 10px; /* Espacio superior entre el contenedor y otros elementos */
+}
+
+/* Estilo del título */
+.primera-columna {
+    font-size: 22px; /* Tamaño de la fuente más grande para el título */
+    font-weight: 700; /* Fuente en negrita */
+    padding-top: 5px;
+    padding-bottom: 22px; /* Espacio superior e inferior para darle aire al texto */
+}
+
+/* General para las columnas */
+.columna {
+    background: #1bacac; /* Color de fondo turquesa */
+    padding: 18px; /* Espacio interno (relleno) de los elementos */
+    margin: 2px; /* Espacio externo entre las columnas */
+    border-radius: 5px; /* Bordes redondeados */
+    font-weight: 700; /* Texto en negrita */
+    color: white; /* Texto en color blanco */
+}
+
+/* Estilo específico para la etiqueta Article */
+.columna-Etiqueta-Nav {
+    background: grey; /* Fondo gris */
+    padding-top: 15px;
+    padding-bottom: 150px; /* Espacio adicional en la parte inferior */
+    margin: 25px; /* Margen para separar esta columna de otras */
+    margin-bottom: 15px;
+    border-radius: 5px; /* Bordes redondeados */
+    font-weight: 700; /* Texto en negrita */
+}
+
+/* Contenedor principal que define el ancho máximo y el diseño centralizado */
+.container {
+    display: flex; /* Flexbox para hacer el diseño responsivo */
+    flex-direction: column; /* Organiza el contenido en columnas verticales */
+    width: 90%; /* Ancho del contenedor relativo al viewport */
+    max-width: 1200px; /* Ancho máximo de 1200px */
+    margin: 0 auto; /* Centra el contenedor horizontalmente */
+}
+
+/* Filas y columnas */
+.row {
+    display: flex; /* Flexbox para organizar el contenido en filas horizontales */
+    justify-content: space-between; /* Distribuye los elementos equitativamente */
+    width: 100%; /* La fila ocupa el ancho completo del contenedor */
+}
+
+/* Espaciado de las secciones semánticas */
+header, nav, aside, section, article, footer {
+    margin-bottom: 10px; /* Espacio inferior entre las secciones */
+}
+
+/* Tamaños específicos para las columnas */
+.col-6 {
+    flex: 3; /* Ocupa tres veces el espacio de una columna normal */
+}
+
+.col {
+    flex: 1; /* Ocupa el espacio estándar de una columna */
+}

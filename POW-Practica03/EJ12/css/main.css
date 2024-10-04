@@ -1,0 +1,21 @@
+#reloj {
+    font-family: Arial, sans-serif;
+    font-size: 50px;
+}
+
+.cuadro {
+    background-color: rgb(213, 72, 72);
+    padding: 10px;
+    width: 450px;
+    display: flex;
+    flex-direction: column; /* Asegura que los elementos dentro estén en columna */
+    justify-content: space-between; /* Espacia los elementos dentro del cuadro */
+    align-items: center; /* Mantiene el botón centrado horizontalmente */
+    height: auto; /* Ajusta la altura según el contenido */
+    margin-bottom: 20px; /* Añade un margen inferior entre cuadros */
+}
+
+body{
+    text-align: flex;
+    display: flex;
+}

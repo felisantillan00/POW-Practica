@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 07</title>
+    <link rel="stylesheet" href="css/style1.css"> <!-- Enlace al archivo CSS personalizado -->
+</head>
+
+<body style="align-items: center;">
+    <div>
+        <h2 style="text-align: center;">Heladeria</h2>
+        <h3>Añade un Producto:</h3>
+        <p>Categoria: </p>
+        <form>
+            <select id="opciones" name="opciones">
+                <option value="" disabled selected>Selecciona una Categoria..</option>
+                <option value="opcion1">Opción 1</option>
+                <option value="opcion2">Opción 2</option>
+                <option value="opcion3">Opción 3</option>
+            </select>
+        </form>
+        <h4>Sabores que ofrecemos</h4>
+        <p>Sabor:</p>
+        <input type="text" id="CampText1" name="CampText1">
+        <p>Cantidad:</p>
+        <input type="text" id="CampText2" name="CampText2">
+        <br>
+        <br>
+        <input type="radio" id="Pequeño" name="Tamaño" value="Pequeño">
+        <label for="Pequeño">Pequeño(2)</label>
+        <input type="radio" id="Mediano" name="Tamaño" value="Mediano">
+        <label for="Mediano">Mediano(5)</label>
+        <input type="radio" id="Grande" name="Tamaño" value="Grande">
+        <label for="Grande">Grande(7)</label>
+        <h4>Complementos:</h4>
+        <!-- Checkbox -->
+        <input type="checkbox" id="Compl" name="Mani" value="Compl">
+        <label for="Compl">Mani</label><br>
+        <input type="checkbox" id="Compl" name="Chispas" value="Compl">
+        <label for="Compl">Chispas de Chocolate</label><br>
+        <input type="checkbox" id="Compl" name="Chispas" value="Compl">
+        <label for="Compl">Chispas de Colores</label><br>
+        <input type="checkbox" id="Compl" name="intereses" value="Compl">
+        <label for="Compl">Leche Condensada</label><br>      
+        <br>
+        <input class="btnEnviar" type="submit" name="Enviar" onclick="window.location.href='pag2.html'">
+        <br>
+        <br>
+        <input class="btnBorrar" type="reset" value="Borrar">
+    </div>
+</body>
+
+</html>
