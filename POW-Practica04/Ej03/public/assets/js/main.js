@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
     const apiUrl = 'https://petstore.swagger.io/v2/pet/findByStatus?status=available'; // API de Petstore
-    
     // Hacer la petición AJAX
     $.ajax({
         url: apiUrl,

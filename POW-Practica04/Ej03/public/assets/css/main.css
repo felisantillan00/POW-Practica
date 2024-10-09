@@ -1,18 +1,19 @@
 .card-container {
-    display: flex;                 /* Hacer que los elementos se alineen en fila */
-    flex-wrap: wrap;               /* Permitir que los elementos pasen a una nueva línea si es necesario */
-    justify-content: center;       /* Centrar las tarjetas horizontalmente */
-    align-items: center;           /* Alinear las tarjetas verticalmente */
-    gap: 10px;                     /* Espacio entre las tarjetas */
+    display: flex; /* Puedes usar 'grid' en lugar de 'flex' si prefieres */
+    flex-wrap: wrap; /* Permite que las cards se acomoden en varias filas si es necesario */
+    gap: 20px; /* Espaciado entre las cards */
+    justify-content: space-evenly; /* Centra y distribuye las cards */
+    padding: 20px;
 }
 
 .card {
-    /* background-color: #fff; */
-    /* border: 1px solid #ccc; */
+    font-size: 15px;
     border-radius: 8px;
-    padding-left: 0px;
-    height: 60px;
+    height: auto; /* Deja que el contenido determine la altura */
     width: 220px;                  /* Asegurar que todas las tarjetas tengan el mismo ancho */
     text-align: left;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border: 2px solid rgb(0, 0, 0);
+    padding-left: 5px; /* Ajusta el valor según necesites */
+    background-color: #f9f9f9; /* Color de fondo suave */
 }

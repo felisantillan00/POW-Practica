@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html :class="{ 'theme-dark': dark }" x-data="data()" lang="en">
-
+<!-- https://petstore.swagger.io LA API DE PETS -->
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,36 +9,15 @@
   <link rel="stylesheet" href="../assets/css/tailwind.output.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.css" />
   <link rel="stylesheet" href="../assets/css/main.css">
+  <link rel="shortcut icon" href="../assets/img/huella.png" />
 </head>
 
 <body>
   <div class="flex h-screen bg-gray-50 dark:bg-gray-900" :class="{ 'overflow-hidden': isSideMenuOpen }">
-    <!-- Backdrop -->
-    <div x-show="isSideMenuOpen" x-transition:enter="transition ease-in-out duration-150"
-      x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100"
-      x-transition:leave="transition ease-in-out duration-150" x-transition:leave-start="opacity-100"
-      x-transition:leave-end="opacity-0"
-      class="fixed inset-0 z-10 flex items-end bg-black bg-opacity-50 sm:items-center sm:justify-center"></div>
-    <aside class="fixed inset-y-0 z-20 flex-shrink-0 w-64 mt-16 overflow-y-auto bg-white dark:bg-gray-800 md:hidden"
-      x-show="isSideMenuOpen" x-transition:enter="transition ease-in-out duration-150"
-      x-transition:enter-start="opacity-0 transform -translate-x-20" x-transition:enter-end="opacity-100"
-      x-transition:leave="transition ease-in-out duration-150" x-transition:leave-start="opacity-100"
-      x-transition:leave-end="opacity-0 transform -translate-x-20" @click.away="closeSideMenu"
-      @keydown.escape="closeSideMenu">
-    </aside>
     <div class="flex flex-col flex-1 w-full">
       <header class="z-10 py-4 bg-white shadow-md dark:bg-gray-800">
         <div
           class="container flex items-center justify-between h-full px-6 mx-auto text-purple-600 dark:text-purple-300">
-          <!-- Mobile hamburger -->
-          <button class="p-1 mr-5 -ml-1 rounded-md md:hidden focus:outline-none focus:shadow-outline-purple"
-            @click="toggleSideMenu" aria-label="Menu">
-            <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd"
-                d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-                clip-rule="evenodd"></path>
-            </svg>
-          </button>
           <!-- Search input -->
           <div class="flex justify-center flex-1 lg:mr-32">
             <div class="relative w-full max-w-xl mr-6 focus-within:text-purple-500">
@@ -72,7 +51,6 @@
                   </svg>
                 </template>
               </button>
-            </li>
             </li>
             <!-- Profile menu -->
             <li class="relative">
@@ -134,145 +112,157 @@
             Listado de mascotas
           </h2>
           <!-- Cards -->
-          <div class="grid gap-6 mb-8 md:grid-cols-2 xl:grid-cols-4 flex flex-wrap justify-between card-container">
+          <div class="grid grid-cols-5 gap-4 grid gap-6 mb-8 md:grid-cols-2 xl:grid-cols-4 flex flex-wrap justify-between card-container">
             <!-- Card -->
             <a href="index.html" class="flex items-center p-4 bg-white rounded-lg shadow-xs dark:bg-gray-800 card">
               <div class="p-3 mr-4 text-orange-500 bg-orange-100 rounded-full dark:text-orange-100 dark:bg-orange-500">
-                  <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z"></path>
-                  </svg>
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                  <path
+                    d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z">
+                  </path>
+                </svg>
               </div>
               <div>
-                  <p class="mb-2 text-1xl font-semibold text-gray-700 dark:text-gray-200">
-                      Listado de mascotas activas
-                  </p>
+                <p class="mb-2 text-1xl font-semibold text-gray-700 dark:text-gray-200">
+                  Listado de mascotas activas
+                </p>
               </div>
             </a>
             <!-- Card -->
             <a href="create-pet.html" class="flex items-center p-4 bg-white rounded-lg shadow-xs dark:bg-gray-800 card">
               <div class="p-3 mr-4 text-orange-500 bg-orange-100 rounded-full dark:text-orange-100 dark:bg-orange-500">
-                  <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z"></path>
-                  </svg>
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                  <path
+                    d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z">
+                  </path>
+                </svg>
               </div>
               <div>
-                  <p class="mb-2 text-1xl font-semibold text-gray-700 dark:text-gray-200">
-                      Dar de alta mascotas
-                  </p>
+                <p class="mb-2 text-1xl font-semibold text-gray-700 dark:text-gray-200">
+                  Dar de alta mascotas
+                </p>
               </div>
             </a>
             <!-- Card -->
-            <a href="index.html" class="flex items-center p-4 bg-white rounded-lg shadow-xs dark:bg-gray-800 card">
+            <a href="edit-pet.html" class="flex items-center p-4 bg-white rounded-lg shadow-xs dark:bg-gray-800 card">
               <div class="p-3 mr-4 text-orange-500 bg-orange-100 rounded-full dark:text-orange-100 dark:bg-orange-500">
-                  <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z"></path>
-                  </svg>
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                  <path
+                    d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z">
+                  </path>
+                </svg>
               </div>
               <div>
-                  <p class="mb-2 text-1xl font-semibold text-gray-700 dark:text-gray-200">
-                      Editar mascota
-                  </p>
+                <p class="mb-2 text-1xl font-semibold text-gray-700 dark:text-gray-200">
+                  Editar mascota
+                </p>
               </div>
             </a>
             <!-- Card -->
-            <a href="index.html" class="flex items-center p-4 bg-white rounded-lg shadow-xs dark:bg-gray-800 card">
+            <a href="delete-pet.html" class="flex items-center p-4 bg-white rounded-lg shadow-xs dark:bg-gray-800 card">
               <div class="p-3 mr-4 text-orange-500 bg-orange-100 rounded-full dark:text-orange-100 dark:bg-orange-500">
-                  <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z"></path>
-                  </svg>
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                  <path
+                    d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z">
+                  </path>
+                </svg>
               </div>
               <div>
-                  <p class="mb-2 text-1xl font-semibold text-gray-700 dark:text-gray-200">
-                      Borrar mascotas
-                  </p>
+                <p class="mb-2 text-1xl font-semibold text-gray-700 dark:text-gray-200">
+                  Borrar mascotas
+                </p>
               </div>
             </a>
             <!-- Card -->
-            <a href="index.html" class="flex items-center p-4 bg-white rounded-lg shadow-xs dark:bg-gray-800 card">
+            <a href="search-pet.html" class="flex items-center p-4 bg-white rounded-lg shadow-xs dark:bg-gray-800 card">
               <div class="p-3 mr-4 text-orange-500 bg-orange-100 rounded-full dark:text-orange-100 dark:bg-orange-500">
-                  <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z"></path>
-                  </svg>
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                  <path
+                    d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z">
+                  </path>
+                </svg>
               </div>
               <div>
-                  <p class="mb-2 text-1xl font-semibold text-gray-700 dark:text-gray-200">
-                      Buscar mascotas
-                  </p>
+                <p class="mb-2 text-1xl font-semibold text-gray-700 dark:text-gray-200">
+                  Buscar mascotas
+                </p>
               </div>
             </a>
-          <div class="flex flex-col flex-1 w-full">
-            </header>
             <!-- Filter and Sort Controls -->
-            <div class="px-6 py-4 bg-white dark:bg-gray-800 space-x-20">
-              <div class="flex flex-wrap justify-between mb-4">
-                <!-- Filter Options -->
-                <div class="flex items-center space-x-10">
-                  <label for="filter-category"
-                    class="block text-sm font-medium text-gray-700 dark:text-gray-300">Filtrar por:</label>
-                  <select id="filter-category" name="filter-category"
-                    class="block w-full py-2 pl-3 pr-10 text-base border-gray-300 rounded-md dark:border-gray-600 dark:bg-gray-700 dark:text-gray-300 sm:text-sm">
-                    <option value="all">Todas las categorias</option>
-                    <option value="dogs">Perro</option>
-                    <option value="cats">Gatos</option>
-                    <option value="others">Otros</option>
-                  </select>
+            <div class="flex flex-col flex-1 w-full">
+              <div class="px-6 py-4 bg-white dark:bg-gray-800 space-x-20">
+                <div class="flex flex-wrap justify-between mb-4">
+                  <!-- Filter Options -->
+                  <div class="flex items-center space-x-10">
+                    <label for="filter-category"
+                      class="block text-sm font-medium text-gray-700 dark:text-gray-300">Filtrar por:</label>
+                    <select id="filter-category" name="filter-category"
+                      class="block w-full py-2 pl-3 pr-10 text-base border-gray-300 rounded-md dark:border-gray-600 dark:bg-gray-700 dark:text-gray-300 sm:text-sm">
+                      <option value="all">Todas las categorias</option>
+                      <option value="dogs">Perro</option>
+                      <option value="cats">Gatos</option>
+                      <option value="others">Otros</option>
+                    </select>
+                  </div>
+                  <!-- Sort Options -->
+                  <div class="flex items-center space-x-10">
+                    <label for="sort-by" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Ordenar
+                      por:</label>
+                    <select id="sort-by" name="sort-by"
+                      class="block w-full py-2 pl-3 pr-10 text-base border-gray-300 rounded-md dark:border-gray-600 dark:bg-gray-700 dark:text-gray-300 sm:text-sm">
+                      <option value="name-asc">ID</option>
+                      <option value="name-asc">Nombre (A-Z)</option>
+                      <option value="name-desc">Nombre (Z-A)</option>
+                    </select>
+                  </div>
                 </div>
-                <!-- Sort Options -->
-                <div class="flex items-center space-x-10">
-                  <label for="sort-by" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Ordenar
-                    por:</label>
-                  <select id="sort-by" name="sort-by"
-                    class="block w-full py-2 pl-3 pr-10 text-base border-gray-300 rounded-md dark:border-gray-600 dark:bg-gray-700 dark:text-gray-300 sm:text-sm">
-                    <option value="name-asc">ID</option>
-                    <option value="name-asc">Nombre (A-Z)</option>
-                    <option value="name-desc">Nombre (Z-A)</option>
-                  </select>
+              </div>
+            </div>
+            <!-- New Table -->
+            <div class="w-full overflow-hidden rounded-lg shadow-xs">
+              <div class="w-full overflow-x-auto">
+                <table class="w-full whitespace-no-wrap" id="listadoMascotas">
+                  <thead>
+                    <tr
+                      class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
+                      <th class="w-16 px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">ID
+                      </th>
+                      <th class="px-4 py-3">Nombre</th>
+                      <th class="px-4 py-3">Categoria</th>
+                      <th class="px-4 py-3">Estado</th>
+                      <th class="px-4 py-3">Fecha</th>
+                    </tr>
+                  </thead>
+                  <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800" id="listadoMascotas">
+                    <tr class="text-gray-700 dark:text-gray-400">
+                      <td class="px-4 py-3" id="id">1</td>
+                      <td class="px-4 py-3">
+                        <div class="flex items-center text-sm">
+                          <!-- Avatar with inset shadow -->
+                          <div class="relative hidden w-8 h-8 mr-3 rounded-full md:block">
+                            <img class="object-cover w-full h-full rounded-full" id="image" />
+                            <div class="absolute inset-0 rounded-full shadow-inner" aria-hidden="true"></div>
+                          </div>
+                          <div>
+                            <p class="font-semibold" id="nombre"></p>
+                          </div>
+                        </div>
+                      </td>
+                      <td class="px-4 py-3 text-sm" id="categoria"></td>
+                      <td class="px-4 py-3 text-xs">
+                        <span
+                          class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100"
+                          id="estado"></span>
+                      </td>
+                      <td class="px-4 py-3 text-sm" id="fecha"></td>
+                    </tr>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-          <!-- New Table -->
-          <div class="w-full overflow-hidden rounded-lg shadow-xs">
-            <div class="w-full overflow-x-auto">
-              <table class="w-full whitespace-no-wrap" id="listadoMascotas">
-                <thead>
-                  <tr
-                    class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
-                    <th class="w-16 px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">ID</th>
-                    <th class="px-4 py-3">Nombre</th>
-                    <th class="px-4 py-3">Categoria</th>
-                    <th class="px-4 py-3">Estado</th>
-                    <th class="px-4 py-3">Fecha</th>
-                  </tr>
-                </thead>
-                <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800" id="listadoMascotas">
-                  <tr class="text-gray-700 dark:text-gray-400">
-                    <td class="px-4 py-3" id="id">1</td>
-                    <td class="px-4 py-3">
-                      <div class="flex items-center text-sm">
-                        <!-- Avatar with inset shadow -->
-                        <div class="relative hidden w-8 h-8 mr-3 rounded-full md:block">
-                          <img class="object-cover w-full h-full rounded-full" id="image" />
-                          <div class="absolute inset-0 rounded-full shadow-inner" aria-hidden="true"></div>
-                        </div>
-                        <div>
-                          <p class="font-semibold" id="nombre"></p>
-                        </div>
-                      </div>
-                    </td>
-                    <td class="px-4 py-3 text-sm" id="categoria"></td>
-                    <td class="px-4 py-3 text-xs">
-                      <span
-                        class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100"
-                        id="estado"></span>
-                    </td>
-                    <td class="px-4 py-3 text-sm" id="fecha"></td>
-                  </tr>
-            </div>
-          </div>
-        </div>
       </main>
-    </div>
+    </table>
   </div>
   <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
   <script src="../assets/js/init-alpine.js"></script>
