@@ -1,0 +1,116 @@
+<html>
+    <head>
+        <title>ejemplo api ajax</title>
+        <meta charset="utf-8" />
+        <link
+            rel="stylesheet"
+            href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+        />
+        <script
+            src="https://code.jquery.com/jquery-3.7.1.min.js"
+            integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+            crossorigin="anonymous"
+        ></script>
+    </head>
+    <body>
+        <h1>ejemplo de api, ajax, jquery y json</h1>
+        <div class="container">
+            <div id="content">
+                <button id="listar">listar</button>
+                <div id="provinciasContent"></div>
+            </div>
+        </div>
+        <br />
+        <br />
+        <br />
+        <br />
+        <script>
+            $(document).ready(function () {
+                
+                $("#listar").click(function () {
+                    $.ajax({
+                        type: "GET",
+                        url: "https://apis.datos.gob.ar/georef/api/provincias",
+                        dataType: "json",
+                        success: function (result, status) {
+                            var cantProvincias =
+                                "<h2>provincias: " + result.cantidad + "</h2>";
+                            $("#provinciasContent").html(cantProvincias);
+                            var tablaProvincias =
+                                '<table class="table table-dark"><tr><th>ID</th><th>NOMBRE</th><th>LAT</th><th>LONG</th></tr>';
+                            result.provincias.forEach(function (element) {
+                                tablaProvincias +=
+                                    "<tr><td>" +
+                                    element.id +
+                                    "</td><td>" +
+                                    element.nombre +
+                                    "</td><td>" +
+                                    element.centroide.lat +
+                                    "</td><td>" +
+                                    element.centroide.lon +
+                                    "</td></tr>";
+                            });
+                            tablaProvincias += "</table>";
+                            $("#provinciasContent").append(tablaProvincias);
+
+                            var input = $("<input id='texto' type='text'/>");
+                            var bntBuscar = $(
+                                "<input id='buscar' type='button' value='buscar'/>"
+                            );
+                            var localidadesContent = $(
+                                "<div id='localidadesContent'></div>"
+                            );
+
+                            bntBuscar.click(function () {
+                                $.ajax({
+                                    type: "GET",
+                                    url:
+                                        "https://apis.datos.gob.ar/georef/api/localidades?provincia=" +
+                                        $("#texto").val() +
+                                        "&max=500",
+                                    dataType: "json",
+                                    success: function (result, status) {
+                                        var headContent = $(
+                                            "<h2> cantidad de LOCALIDADES: " +
+                                                result.cantidad +
+                                                "</h2>"
+                                        );
+                                        var table = $(
+                                            "<table border='1px'><tr><th>ID</th><th>LOCALIDAD</th></tr>"
+                                        );
+
+                                        result.localidades.forEach(function (
+                                            element
+                                        ) {
+                                            table.append(
+                                                "<tr><td>" +
+                                                    element.id +
+                                                    "</td><td>" +
+                                                    element.nombre +
+                                                    "</td></tr>"
+                                            );
+                                        });
+
+                                        $("#localidadesContent").html(
+                                            headContent
+                                        );
+                                        $("#localidadesContent").append(table);
+                                    },
+                                    error: function (xhr, status, error) {
+                                        alert("error:" + error);
+                                    },
+                                });
+                            });
+                            $("#provinciasContent").append(input);
+                            $("#provinciasContent").append(bntBuscar);
+                            $("#provinciasContent").append(localidadesContent);
+                        },
+                        error: function (xhr, status, error) {
+                            alert("error:" + error);
+                        },
+                    });
+                });
+            });
+        </script>
+    </body>
+</html>

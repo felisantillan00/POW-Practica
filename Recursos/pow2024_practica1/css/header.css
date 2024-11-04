@@ -1,0 +1,29 @@
+header{
+    text-align: center;
+}            
+.menuheader{
+    height: 50px;
+    line-height: 50px;
+    text-align: left;
+    background: #0a1159;
+    padding-left: 1%;
+}            
+.menuheader a{
+    color:#eee;
+    margin-right: 15px;
+    text-decoration: none;
+    font-size: 20px;
+    font-family: Lato,Helvetica,sans-serif;
+}
+.alerta{
+    background: red;
+    color:white;
+}
+#content{
+    min-height: 500px;    
+}
+footer{
+    margin-top: 50px;
+    background: #0a1159;
+    height: 300px;
+}

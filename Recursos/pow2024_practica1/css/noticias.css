@@ -1,0 +1,17 @@
+h1{
+    font-size: 43px;
+    line-height: 53px;
+    font-weight: 600;
+    font-family: Merriweather,serif;
+    margin: 30px 0;
+    color: #0a1159;
+}
+
+.ganador
+{
+    background: yellow;
+}
+
+.tablaganadores{
+    width: 25%;
+}

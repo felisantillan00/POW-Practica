@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>UNLPAM QUEUE</title>
+        <link rel="stylesheet" href="style.css">            
+    </head>
+    <body>
+        <h1>UNLPAM QUEUE</h1>
+        <div class="queue-controls">
+            <input type="text" id="client-name" placeholder="ingresa tu nombre"/>
+            <button id="add-client">Agregar (push)</button>
+            <button id="attend-client">Atender (pop)</button>
+        </div>
+        <div id="bank-queue">
+            <div id="service">
+                EN ESPERA
+            </div>
+            <div id="current-client"></div>    
+            <div id="queue">
+            </div>
+        </div>
+        <script src="script.js"></script>            
+    </body>    
+</html>

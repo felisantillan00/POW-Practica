@@ -1,0 +1,29 @@
+Utilidades para la Practica 2
+
+Border Radius
+https://border-radius.com/
+
+Box Shadow
+https://www.cssmatic.com/es/box-shadow
+
+Botones
+https://javifont.medium.com/gu%C3%ADa-r%C3%A1pida-para-estilos-css-en-botones-4eaca81ad32a
+
+Formas de Centrar (5 metodos para trabajar con divs y centrado)
+https://rafaelneto.dev/blog/cinco-formas-centrar-texto-div-css/
+
+
+Flexbox
+https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+
+Degrade
+https://mycolor.space/gradient
+https://cssgradient.io/
+
+Template y maquetación bootstrap
+
+https://www.w3bai.com/es/bootstrap/bootstrap_templates.html#gsc.tab=0
+
+- unidades en css
+
+https://developer.mozilla.org/es/docs/Learn/CSS/Building_blocks/Values_and_units
